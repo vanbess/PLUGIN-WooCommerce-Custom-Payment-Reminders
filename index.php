@@ -32,7 +32,7 @@ add_action('woocommerce_loaded', function () {
  */
 add_action('init', function () {
     require_once PMT_REM_PATH . 'functions/as_action.php';
-    require_once PMT_REM_PATH . 'functions/as_action_cancel_orders.php';
+    require_once PMT_REM_PATH . 'functions/as_action_cancel_order.php';
 });
 
 /**
