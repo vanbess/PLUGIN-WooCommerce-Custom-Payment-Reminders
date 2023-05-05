@@ -28,10 +28,11 @@ add_action('woocommerce_loaded', function () {
 });
 
 /**
- * Hook our Action Scheduler action to init
+ * Hook our Action Scheduler actions to init
  */
 add_action('init', function () {
     require_once PMT_REM_PATH . 'functions/as_action.php';
+    require_once PMT_REM_PATH . 'functions/as_action_cancel_orders.php';
 });
 
 /**
@@ -55,6 +56,9 @@ function pmt_rem_woo_template_path($template, $template_name, $template_path) {
     return $template;
 }
 
+/**
+ * Filter invoice email subject text
+ */
 add_filter('woocommerce_email_subject_customer_invoice', 'my_custom_invoice_email_subject', 10, 2);
 
 function my_custom_invoice_email_subject($subject, $order) {
